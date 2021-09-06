@@ -15,6 +15,12 @@ class Contact(models.Model):
         max_length=100
     )
 
+    img_logo = models.ImageField(
+        upload_to = '../media_root',
+        null = True,
+        blank = True,
+    )
+
     def __str__(self):
         return '{}'.format(self.name)
 # Create your models here.
