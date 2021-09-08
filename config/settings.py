@@ -132,4 +132,4 @@ STATICFILES_DIR = [
 ]
 
 MEDIA_URL = "/uploaded/"
-MEDIA_ROOT = os.path.join(BASE_DIR, '../media_root')
+MEDIA_ROOT = os.path.join(BASE_DIR, '../backend_part/core/static/core/media_root')
