@@ -1,69 +1,11 @@
+
+{% extends 'base\header.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <script src="https://kit.fontawesome.com/332010db09.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="{% static 'css/bootstrap.css' %} " type="text/css">
-    <link rel="stylesheet" href="{% static 'css/main_head.css' %} " type="text/css">
-    <title>
-        {% block title %} {% endblock %}
-    </title>
-  </head>
-<body>
-<header>
-  <div class="container mt-1 fs-5 ">
-    <div class="row align-items-center  ">
-        <div class="col-sm-2 d-none d-lg-block d-print-block ">
-            <img src="
-                {% with 'core'|add:contact.img_logo.url as image_static %}
-                {% static image_static %}
-                {% endwith %}"  class=" img-fluid" alt="home" />
-        </div>
-        <div class="col-sm-2">
-            <p> Адрес: <br>
-                {{contact.address_shop}}
-        </div>
-        <div class="col-sm-3">
-            <p> Почта: <br>
-            {{contact.email}} </p>
-        </div>
-        <div class="col">
-            <i class="fab fa-viber"> {{contact.telephone}}</i>
-            <br>
-            <i class="fab fa-telegram"> {{contact.telephone}}</i>
-        </div>
-        <div class="col-sm-3 " >
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
-                        <button class="btn btn-outline-success" type="submit">Поиск</button>
-                    </form>
-                </div>
-            </nav>
-        </div>
-    </div>
-  <div class="row">
-      <div class="col-1 p-2" >
-        <div class="btn-group-vertical" role="group" aria-label="Button group with nested dropdown">
-            <button type="button" class="btn btn-primary">fdfdfdfdfdffdfdfdfrereter</button>
-            <button type="button" class="btn btn-primary">2</button>
-            <div class="btn-group" role="group">
-                <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                <li><a class="dropdown-item" href="1">Dropdown link</a></li>
-                <li><a class="dropdown-item" href="2">Dropdown link</a></li>
-            </ul>
-        </div>
-    </div>
-  </div>
-</header>
-    {% block main %}
-   {% endblock %}
+
+{% block header %}
+{% block footer %}
+    {% block body %}
+    {% endblock %}
 <!-- Footer -->
 <footer class="text-center text-lg-start text-muted bg-light">
   <!-- Section: Links  -->
@@ -150,5 +92,6 @@
   <!-- Copyright -->
 </footer>
 <!-- Footer -->
+    {% endblock %}
 </body>
-</html>
+{% endblock%}
