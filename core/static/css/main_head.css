@@ -1,3 +1,12 @@
 .img-max {
   width:80%;
 }
+
+.wrap ul {
+  list-style-position: inside;
+  -moz-column-count: 2; /* Firefox */
+  -webkit-column-count: 2; /* Safari and Chrome */
+  column-count: 2;
+  list-style-type: decimal;
+  height: 200px;
+}

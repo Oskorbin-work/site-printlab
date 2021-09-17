@@ -2,7 +2,7 @@
 {% load static %}
 {% block title %} Main {% endblock %}
 {% block body %}
-<div class="row row-cols-1 row-cols-md-4 g-4 md-4 mt-1">
+<div class="row row-cols-1 row-cols-md-4 g-4 md-4 mt-1 mb-1">
     {% for service in object_list %}
             <div class="col align-self-center ">
                 <div class="card" style="width: 18rem;">
@@ -23,6 +23,38 @@
             </div>
     {% endfor %}
         </div>
+    <nav>
+<ul class="pagination">
+                <li class="page-item">
+                <a href="?page=1" class="page-link">
+                    Первая страница
+                </a>
+            </li>
+    {% if page_obj.has_previous %}
+      <li  class="page-item" ><a class="page-link" href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+    {% else %}
+      <li class=" page-item disabled"></li>
+    {% endif %}
+    {% for i in page_obj.paginator.page_range %}
+      {% if page_obj.number == i %}
+        <li class=" page-item active"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+      {% else %}
+        <li  class="page-item" ><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+    {% endfor %}
+    {% if page_obj.has_next %}
+      <li  class="page-item" ><a class="page-link" href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+    {% else %}
+      <li class=" page-item disabled"></li>
+    {% endif %}
+    <li class="page-item">
+                <a href="?page=last" class="page-link">
+                    Последняя страница
+                </a>
+            </li>
+  </ul>
+
+    </nav>
     </div>
 </div>
 {% endblock%}
