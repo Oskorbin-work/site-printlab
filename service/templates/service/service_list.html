@@ -14,8 +14,8 @@
                     <div class="card-body">
                         <h5 class="card-title">{{service.name}}</h5>
                         <p class="card-text">
-                        {{service.descriptions}} </p>
-                        <a href="{% url 'services:ServicesDetail' pk=service.id%}" class="btn btn-primary">Детальный просмотр</a>
+                        {{service.description}} </p>
+                        <a href="{% url 'service:ServicesDetail' pk=service.id%}" class="btn btn-primary">Детальный просмотр</a>
                     </div>
 
                 </div>

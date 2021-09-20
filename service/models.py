@@ -34,11 +34,14 @@ class Service(models.Model):
         blank=True,
     )
 
-    img_services = models.ManyToManyField(Image_service, related_name='img_serv')
+    img_service = models.ManyToManyField(Image_service, related_name='img_serv')
 
-    descriptions = models.TextField()
+    description = models.TextField()
 
     def __str__(self):
         return '{}'.format(self.name)
+
+    class Meta:
+        ordering = ('name','description')
 
 

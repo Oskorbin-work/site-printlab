@@ -3,7 +3,7 @@ from django.urls import include, path
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
-    path('', include('services.urls', namespace = 'services')),
+    path('', include('service.urls', namespace = 'service')),
     path('admin/', admin.site.urls),
 ]
 

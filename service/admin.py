@@ -1,5 +1,5 @@
 from django.contrib import admin
-from services.models import (
+from service.models import (
 Service, Image_service
 )
 admin.site.register(Service)
