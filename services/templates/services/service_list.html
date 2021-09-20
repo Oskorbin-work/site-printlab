@@ -6,8 +6,8 @@
     {% for service in object_list %}
             <div class="col align-self-center ">
                 <div class="card" style="width: 18rem;">
-                    <img src="
-                        {% with 'core'|add:service.img.img.url as image_static %}
+                     <img src="
+                        {% with 'core'|add:service.img_title.url as image_static %}
                         {% static image_static %}
                         {% endwith %}"
                         class="card-img-top" alt="...">
@@ -15,7 +15,7 @@
                         <h5 class="card-title">{{service.name}}</h5>
                         <p class="card-text">
                         {{service.descriptions}} </p>
-                        <a href="#" class="btn btn-primary">Детальный просмотр</a>
+                        <a href="{% url 'services:ServicesDetail' pk=service.id%}" class="btn btn-primary">Детальный просмотр</a>
                     </div>
 
                 </div>

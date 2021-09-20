@@ -5,10 +5,12 @@
   <div class="container mt-1 fs-5 ">
     <div class="row align-items-center  ">
         <div class="col-sm-2 d-none d-lg-block d-print-block ">
+            <a  href="{% url 'services:index' %}">
             <img src="
                 {% with 'core'|add:contact.img_logo.url as image_static %}
                 {% static image_static %}
                 {% endwith %}"  class=" img-fluid" alt="home" />
+            </a>
         </div>
         <div class="col-sm-2">
             <p> Адрес: <br>
@@ -44,14 +46,16 @@
     <div class="row justify-content-md-center  ">
          <div class="col-sm-2">
                 <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                    <button type="button" class="btn btn-primary">Главная</button>
+                    <button type="button" class="btn btn-primary"><a class="text-decoration-none text-reset" href="{% url 'services:index' %}"> Главная  </a></button>
                             <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                 Услуги
                             </button>
 
                             <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                                 {% for service in object_list %}
-                                <li><a class="dropdown-item" href="#">{{service.name}}</a></li>
+                                    <li><a class="dropdown-item"
+                                           href="{% url 'services:ServicesDetail' pk=service.id%}">{{service.name}}
+                                    </a></li>
                                 {% endfor %}
                             </ul>
                             <button type="button" class="btn btn-primary"> Контакты</button>

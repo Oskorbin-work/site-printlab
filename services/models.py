@@ -27,7 +27,14 @@ class Service(models.Model):
     name = models.CharField(
         max_length=100
     )
-    img = models.ForeignKey(Image_service, on_delete=models.CASCADE)
+
+    img_title = models.ImageField(
+        upload_to='../media_root',
+        null=True,
+        blank=True,
+    )
+
+    img_services = models.ManyToManyField(Image_service, related_name='img_serv')
 
     descriptions = models.TextField()
 
