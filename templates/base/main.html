@@ -4,7 +4,11 @@
 
 {% block header %}
 {% block footer %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url 'service:index'%}">Главная</a></li>
     {% block body %}
+
     {% endblock %}
 <!-- Footer -->
 <footer class="text-center text-lg-start text-muted bg-light">
@@ -90,6 +94,7 @@
 обязательна.
   </div>
   <!-- Copyright -->
+
 </footer>
 <!-- Footer -->
     {% endblock %}

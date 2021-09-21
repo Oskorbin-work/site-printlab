@@ -22,6 +22,10 @@ class Image_service(models.Model):
     )
     descriptions = models.TextField()
 
+    @property
+    def img_url(self):
+        if self.img and hasattr(self.img, 'url'):
+            return self.img.url
 
 class Service(models.Model):
     name = models.CharField(

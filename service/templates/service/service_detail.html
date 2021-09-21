@@ -1,2 +1,40 @@
 {% extends 'base\main.html' %}
-{% block title %} {{object.name}} {% endblock %}
+{% load static %}
+{% block title %} Услуга {{object.name}} {% endblock %}
+{% block body %}
+    <li class="breadcrumb-item active" aria-current="page">Услуга {{object.name}}</li>
+  </ol>
+</nav>
+
+<h3>Услуга {{object.name}} </h3>
+
+<section class="gallery">
+     <div class="container-lg">
+        <div class="row ">
+            {%for img in object.img_service.all%}
+            <div class="col">
+                <img src="{% with 'core'|add:img.img_url as image_static %}
+                        {% static image_static %}
+                        {% endwith %}" class="gallery-item" alt="gallery">
+           </div>
+          {% endfor %}
+
+        </div>
+     </div>
+  </section>
+<div class="modal fade" id="gallery-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+       <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+         <img src="https://raw.githubusercontent.com/docker-library/docs/757578e3a44e5460a8a11d32a81776f8b74231a9/eclipse-mosquitto/logo.png" class="modal-img" alt="modal img">
+      </div>
+    </div>
+  </div>
+</div>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/detail_service.js' %}"></script>
+{% endblock%}
