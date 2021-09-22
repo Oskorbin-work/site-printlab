@@ -1,5 +1,3 @@
-img{
-}
 .gallery{
 }
 .gallery img{
@@ -10,4 +8,11 @@ img{
 }
 #gallery-modal .modal-img{
 		width: 100%;
+}
+
+.list_requirements li:after {
+    content: ";";
+}
+.list_requirements li:last-child:after {
+    content: ".";
 }

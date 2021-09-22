@@ -43,27 +43,18 @@
   </div>
 </header>
 <div class="container ">
-    <div class="row justify-content-md-center  ">
+    <div class="row ">
          <div class="col-sm-2">
-                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                <div class="btn-group" role="group" >
                     <button type="button" class="btn btn-primary"><a class="text-decoration-none text-reset" href="{% url 'service:index' %}"> Главная  </a></button>
-                            <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                Услуги
-                            </button>
-
-                            <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                {% for service in object_list %}
-                                    <li><a class="dropdown-item"
-                                           href="{% url 'service:ServicesDetail' pk=service.id%}">{{service.name}}
-                                    </a></li>
-                                {% endfor %}
-                            </ul>
-                            <button type="button" class="btn btn-primary"> Контакты</button>
-
+                    <button type="button" class="btn btn-primary"> Контакты</button>
                 </div>
          </div>
-        </div>
-
+    </div>
+    <br>
+    <h3>Список услуг </h3>
+      </ol>
+</nav>
     {% block footer %}
     {% endblock %}
 {% endblock %}
