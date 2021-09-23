@@ -1,6 +1,7 @@
 from django.db import models
 
 
+# Storage information about company
 class Contact(models.Model):
     name = models.CharField(
         max_length=100
@@ -23,4 +24,3 @@ class Contact(models.Model):
 
     def __str__(self):
         return '{}'.format(self.name)
-# Create your models here.

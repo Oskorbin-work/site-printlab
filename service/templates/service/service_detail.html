@@ -2,26 +2,26 @@
 {% load static %}
 {% block title %} Услуга {{object.name}} {% endblock %}
 {% block body %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url 'service:index'%}">Главная</a></li>
     <li class="breadcrumb-item active" aria-current="page">Услуга {{object.name}}</li>
-  </ol>
+       </ol>
 </nav>
 
 <h3>Услуга {{object.name}} </h3>
 
 <section class="gallery">
-     <div class="container-lg">
-        <div class="row ">
-            {%for img in object.img_service.all%}
+    <div class="row ">
+        {%for img in object.img_service.all%}
             <div class="col">
                 <img src="{% with 'core'|add:img.img_url as image_static %}
                         {% static image_static %}
                         {% endwith %}" class="gallery-item" alt="gallery">
            </div>
-          {% endfor %}
-
-        </div>
-     </div>
-  </section>
+        {% endfor %}
+    </div>
+</section>
 <div class="modal fade" id="gallery-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
@@ -34,12 +34,14 @@
     </div>
   </div>
 </div>
-<h4>Требования к макетам </h4>
-<ul class="list_requirements">
-{%for list_item in object.list_requirements.all%}
-    <li>{{list_item.requirement|safe}}</li>
-{% endfor %}
-</ul>
+<div class="row ">
+    <h4>Требования к макетам </h4>
+</div>
+<div class="row list_requirements">
+    {%for list_item in object.list_requirements.all%}
+        <li>{{list_item.requirement|safe}}</li>
+    {% endfor %}
+</div>
 <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 <script src="{% static 'js/detail_service.js' %}"></script>
 
