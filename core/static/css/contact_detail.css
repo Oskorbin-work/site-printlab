@@ -1,0 +1,13 @@
+.map-container{
+width: 600px;
+height:400px;
+
+}
+.map-container iframe{
+width: 650px;
+height:400px;
+}
+.contact-detail-info{
+    background-color: #0d6efd;
+    color: #fff;
+}

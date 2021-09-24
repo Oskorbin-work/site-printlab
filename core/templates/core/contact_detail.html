@@ -1,0 +1,32 @@
+{% extends 'base\main.html' %}
+{% load static %}
+{% block title %} Контакты {% endblock %}
+{% block body %}
+<div class="row ">
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url 'service:index'%}">Главная</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Контакты</li>
+
+       </ol>
+</nav>
+        </div>
+<div class="row align-items-center ">
+<h3>Контакты </h3>
+            </div>
+<!--Google map-->
+<div class="row ">
+    <div class="col">
+        <div id="map-container-google-1" class="z-depth-1-half map-container" >
+            <iframe src="https://maps.google.com/maps?q=Полтавский+Шлях%2C+56%2F58&rlz=1C1CHZN_ruUA958UA958&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                style="border:0" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="col contact-detail-info blockquote headings-line-height">
+        <p> Телефон: <br> {{contact.telephone}}</p>
+        <p> Адрес: <br> {{contact.email}}</p>
+        <p> Почта: <br> {{contact.address_shop}}</p>
+        <p> Режим работы: <br>  пн - пт 8-00 до 18-00 <br> вс. выходной</p>
+    </div>
+</div>
+{% endblock%}
