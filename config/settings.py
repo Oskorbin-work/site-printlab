@@ -52,7 +52,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'config.urls'
-
+print(os.path.join(BASE_DIR,'templates'))
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -131,6 +131,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIR = [
     os.path.join(BASE_DIR, 'static')
 ]
-
 MEDIA_URL = "/uploaded/"
-MEDIA_ROOT = os.path.join(BASE_DIR, '../backend_part/core/static/core/media_root')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'core/static/core/media_root')
