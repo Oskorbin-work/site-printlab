@@ -17,6 +17,7 @@ class ServiceList(ListView):
         context = super().get_context_data(**kwargs)
         # Get information about company
         context['contact'] = Contact.objects.get(id=1)
+        context['service_menu'] = Service.objects.all()
         return context
 
 
@@ -30,5 +31,5 @@ class ServiceDetail(DetailView):
         # Get information about company
         context['contact'] = Contact.objects.get(id=1)
         # Get all list for menubar
-        context['object_list'] = Service.objects.all()
+        context['service_menu'] = Service.objects.all()
         return context

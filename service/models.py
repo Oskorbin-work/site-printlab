@@ -43,6 +43,9 @@ class Service(models.Model):
     # requirements service
     list_requirements = models.ManyToManyField(Service_requirement, related_name='layout_requirements')
 
+    def test(self):
+        return "str"
+    
     def __str__(self):
         return '{}'.format(self.name)
 

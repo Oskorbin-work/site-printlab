@@ -54,7 +54,7 @@
     <br>
         <div class="col-xs-3 text-center">
         <div class="btn-group nav " role="group">
-                {% for service in object_list %}
+                {% for service in service_menu %}
                     <a href="{% url 'service:ServicesDetail' pk=service.id%}" class="btn btn-primary">
                             <div class="text-decoration-none text-reset" >
                                 {{service.name}}
