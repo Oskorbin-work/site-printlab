@@ -8,7 +8,7 @@ def ContactDetail(request):
     contact = Contact.objects.get(id=1)
     context = {
         'contact': contact,
-        'object_list': Service.objects.all(),
+        'service_menu': Service.objects.all(),
 
     }
     return render(request, 'core/contact_detail.html', context)

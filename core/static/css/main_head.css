@@ -1,5 +1,6 @@
 .img-max {
   width:80%;
+
 }
 
 .wrap ul {
@@ -9,8 +10,16 @@
   column-count: 2;
   list-style-type: decimal;
   height: 200px;
+
 }
+
 .list_services a{
   color: black;
   text-decoration: none;
+
+}
+
+.logo_r img{
+  border: 4px double black; /* Параметры границы */
+
 }

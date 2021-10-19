@@ -13,8 +13,8 @@
     {% for service in object_list %}
             <div class="col-xs-3 align-self-center list_services ">
              <a href="{% url 'service:ServicesDetail' pk=service.id%}">
-                <div class="card" style="width: 18rem;">
-                     <img src="
+                <div class="card " style="width: 18rem; ">
+                     <img style="height: 10rem;"  src="
                         {% with 'core'|add:service.img_title.url as image_static %}
                         {% static image_static %}
                         {% endwith %}"
