@@ -24,3 +24,12 @@ class Contact(models.Model):
 
     def __str__(self):
         return '{}'.format(self.name)
+
+
+class StepHelpMessenger(models.Model):
+    description_stage = models.TextField()
+    img_step = models.ImageField(
+        upload_to='../media_root',
+        null=True,
+        blank=True,
+    )
