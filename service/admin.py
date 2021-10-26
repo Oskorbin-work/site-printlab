@@ -1,7 +1,7 @@
 from django.contrib import admin
 from service.models import (
-    Service, Image_service, Service_requirement
+    Service, ImageService, ServiceRequirement
 )
 admin.site.register(Service)
-admin.site.register(Image_service)
-admin.site.register(Service_requirement)
+admin.site.register(ImageService)
+admin.site.register(ServiceRequirement)

@@ -34,14 +34,19 @@
     </div>
   </div>
 </div>
+{%if object.list_requirements.all.exists%}
 <div class="row ">
     <h4>Требования к макетам </h4>
 </div>
 <div class="row list_requirements">
     {%for list_item in object.list_requirements.all%}
         <li>{{list_item.requirement|safe}}</li>
+    {% empty %}
+    <!-- not -->
     {% endfor %}
+
 </div>
+{%endif%}
 <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 <script src="{% static 'js/detail_service.js' %}"></script>
 

@@ -17,9 +17,9 @@ class Contact(models.Model):
     )
 
     img_logo = models.ImageField(
-        upload_to = '../media_root',
-        null = True,
-        blank = True,
+        upload_to='../media_root',
+        null=True,
+        blank=True,
     )
 
     def __str__(self):
