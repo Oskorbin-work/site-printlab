@@ -20,13 +20,12 @@ def ContactDetail(request):
 
 
 # View help messenger
-class StepHelpMessengerList(ListView):
-    model = StepHelpMessenger
-    context_object_name = 'help_messenger'
+def StepHelpMessengerDetail(request):
+    contact = Contact.objects.get(id=1)
+    context = {
+        'contact': contact,
+        'service_menu': Service.objects.all(),
+        'step_help_messenger': StepHelpMessenger.objects.all(),
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        # Get information about company
-        context['contact'] = Contact.objects.get(id=1)
-        context['service_menu'] = Service.objects.all()
-        return context
+    }
+    return render(request, 'core/help_messenger.html', context)

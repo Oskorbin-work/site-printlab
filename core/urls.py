@@ -4,6 +4,6 @@ from . import views
 
 app_name = 'core'
 urlpatterns = [
-    path('', views.ContactDetail, name='ContactDetail'),
-    path('', views.StepHelpMessengerList, name='StepHelpMessengerList'),
+    path('contact/', views.ContactDetail, name='ContactDetail'),
+    path('help_messenger/', views.StepHelpMessengerDetail, name='StepHelpMessengerDetail'),
 ]

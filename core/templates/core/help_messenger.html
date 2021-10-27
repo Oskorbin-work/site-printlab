@@ -2,12 +2,18 @@
 {% load static %}
 {% block title %} Помощь с Telegram и Viber{% endblock %}
 {% block body %}
-
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-    <li class="breadcrumb-item active">Главная</li>
+    <li class="breadcrumb-item"><a href="{% url 'service:index'%}">Главная</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Помощь с хэлпером</li>
+
        </ol>
 </nav>
     <h3>Помощь с Telegram и Viber </h3>
 
+    <h4>Оглавление </h4>
+    <ol>
+    <li> Telegram</li>
+    <li> Viber</li>
+    </ol>
 {% endblock%}
