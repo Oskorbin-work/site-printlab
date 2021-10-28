@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from core.models import (
-    Contact, StepHelpMessenger
+    Contact, TypeHelpMessenger
 )
 from service.models import Service
 from django.views.generic import (
@@ -20,12 +20,12 @@ def ContactDetail(request):
 
 
 # View help messenger
-def StepHelpMessengerDetail(request):
+def step_help_messenger_detail(request):
     contact = Contact.objects.get(id=1)
     context = {
         'contact': contact,
         'service_menu': Service.objects.all(),
-        'step_help_messenger': StepHelpMessenger.objects.all(),
+        'type_help_messenger': TypeHelpMessenger.objects.all(),
 
     }
     return render(request, 'core/help_messenger.html', context)

@@ -1,7 +1,5 @@
 from django.db import models
 
-from django.db import models
-
 
 # Storage images for services. Many to many
 class ImageService(models.Model):
