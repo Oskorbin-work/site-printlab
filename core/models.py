@@ -30,9 +30,14 @@ class StepHelpMessenger(models.Model):
 
     TYPE_HELP_CHOICES = [
         ("TM", "Telegram"),
-        ("VR", "Viber"),
+        ("VB", "Viber"),
     ]
 
+    help_choices = models.CharField(
+        max_length=2,
+        choices=TYPE_HELP_CHOICES,
+        default="TM",
+    )
     # for i in TypeHelpMessenger.get_all_names(TypeHelpMessenger):
     #    print(i)
 
@@ -46,10 +51,17 @@ class StepHelpMessenger(models.Model):
         blank=True,
     )
 
+    # Get url img. This is safe way
+    @property
+    def img_url(self):
+        if self.img_step and hasattr(self.img_step, 'url'):
+            return self.img_step.url
+
 
 class TypeHelpMessenger(models.Model):
     name = models.CharField(
-        max_length=100
+        max_length=100,
+        unique=True
     )
     description_name = models.TextField(
         blank=True,

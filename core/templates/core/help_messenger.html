@@ -1,6 +1,6 @@
 {% extends 'base/main.html' %}
 {% load static %}
-{% block title %} Помощь с Telegram и Viber{% endblock %}
+{% block title %} Помощь{% endblock %}
 {% block body %}
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
@@ -9,12 +9,43 @@
 
        </ol>
 </nav>
-    <h3>Помощь</h3>
-    <p> Some text </p>
-    <h4>Оглавление </h4>
+    <div class="row ">
+        <h3>Помощь</h3>
+    </div>
+    <div class="row ">
+        <p> Some text </p>
+    </div>
+    <div class="row ">
+        <h4>Оглавление </h4>
+    </div>
     <ol>
-        <li> Telegram</li>
-        <li> Viber</li>
+        {%for type in type_help_messenger%}
+            <div class="row">
+                <li> {{type.name}}</li>
+            </div>
+        {% endfor %}
     </ol>
-    <h3>Помощь с Telegram</h3>
+    {%for type in type_help_messenger%}
+        <div class="row">
+            <h3>Помощь с Telegram</h3>
+        </div>
+        <div class="row">
+            <p>{{ type_help_telegram.description_name }}</p>
+        </div>
+        <div class="row">
+            <h4>Шаги</h4>
+        </div>
+            <ol>
+                {%for steps in type_help_telegram.steps.all%}
+                    <div class="row">
+                        <li>
+                            <p>{{steps.description_stage}}</p>
+                            <img src="{% with 'core'|add:steps.img_url as image_static %}
+                            {% static image_static %}
+                            {% endwith %}" class="img-thumbnail" alt="img_step">
+                        </li>
+                    </div>
+                {% endfor %}
+            </ol>
+    {% endfor %}
 {% endblock%}

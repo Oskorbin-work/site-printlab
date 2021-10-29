@@ -26,6 +26,8 @@ def step_help_messenger_detail(request):
         'contact': contact,
         'service_menu': Service.objects.all(),
         'type_help_messenger': TypeHelpMessenger.objects.all(),
+        'type_help_telegram': TypeHelpMessenger.objects.get(name="Telegram"),
+        'type_help_viber': TypeHelpMessenger.objects.get(name="Viber"),
 
     }
     return render(request, 'core/help_messenger.html', context)
